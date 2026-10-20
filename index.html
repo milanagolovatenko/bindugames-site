@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bindu Games</title>
+<meta name="description" content="Bindu Games is an independent mobile game studio from Yerevan, Armenia. Small, calm, carefully made puzzle and arcade games.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1d1a2b;
+    --ink-soft: #5b5670;
+    --paper: #f7f3ec;
+    --card: #ffffff;
+    --line: #e4ddd0;
+    --saffron: #e8892a;
+    --saffron-deep: #b9621a;
+    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #f2ede4;
+      --ink-soft: #b3adc2;
+      --paper: #16141f;
+      --card: #211e2d;
+      --line: #34304a;
+      --saffron: #f0a050;
+      --saffron-deep: #f0a050;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.6 var(--body);
+    padding: env(safe-area-inset-top, 0px) 20px env(safe-area-inset-bottom, 0px);
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  a { color: var(--saffron-deep); }
+  header.top {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding-block: 28px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+  .brand .dot { flex: none; width: 14px; height: 14px; border-radius: 50%; background: var(--saffron); box-shadow: 0 0 0 6px color-mix(in srgb, var(--saffron) 18%, transparent); }
+  .brand span { font: 700 20px/1 var(--display); letter-spacing: .01em; white-space: nowrap; }
+  nav a { margin-left: 22px; color: var(--ink-soft); text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--ink); }
+
+  .hero { padding-block: 72px 56px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+  .hero h1 { font: 700 clamp(40px, 7vw, 72px)/1.04 var(--display); margin: 0 0 20px; text-wrap: balance; letter-spacing: -.01em; }
+  .hero p { max-width: 34em; color: var(--ink-soft); font-size: 19px; margin: 0; }
+  .bindu { width: clamp(140px, 22vw, 220px); aspect-ratio: 1; position: relative; }
+  .bindu i { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--line); }
+  .bindu i:nth-child(2) { inset: 18%; }
+  .bindu i:nth-child(3) { inset: 36%; }
+  .bindu b { position: absolute; inset: 46%; border-radius: 50%; background: var(--saffron); }
+
+  h2 { font: 700 30px/1.2 var(--display); margin: 0 0 8px; }
+  .lede { color: var(--ink-soft); margin: 0 0 28px; }
+  section { padding-block: 48px; border-top: 1px solid var(--line); }
+
+  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .game { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: flex; gap: 18px; align-items: center; }
+  .game img { width: 88px; height: 88px; border-radius: 22px; flex: none; object-fit: cover; }
+  .game h3 { margin: 0 0 4px; font: 700 20px/1.2 var(--display); }
+  .game p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.5; }
+  .tag { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--saffron-deep); }
+
+  .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; }
+  .about p { margin: 0 0 14px; max-width: 34em; }
+  dl.facts { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: 15px; }
+  dl.facts dt { color: var(--ink-soft); }
+  dl.facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+  footer { padding-block: 32px 48px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 14px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 480px) {
+    header.top { flex-wrap: wrap; row-gap: 10px; }
+    nav { width: 100%; }
+    nav a:first-child { margin-left: 0; }
+  }
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; padding-block: 40px 32px; }
+    .bindu { order: -1; width: 120px; }
+    .about { grid-template-columns: 1fr; }
+    nav a { margin-left: 12px; font-size: 15px; }
+    .game { padding: 16px; gap: 14px; }
+    .game img { width: 72px; height: 72px; border-radius: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./"><div class="dot"></div><span>Bindu Games</span></a>
+    <nav><a href="#games">Games</a><a href="#studio">Studio</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Small games, made with care.</h1>
+      <p>Bindu Games is an independent mobile game studio from Yerevan, Armenia. We make calm puzzle and arcade games for iPhone and Android: easy to start, hard to put down, and free of pushy pop-ups.</p>
+    </div>
+    <div class="bindu" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+  </div>
+
+  <section id="games">
+    <h2>Games</h2>
+    <p class="lede">Coming to the App Store and Google Play.</p>
+    <div class="games">
+      <article class="game">
+        <img src="hexa-stacks.png" alt="Hexa Stacks icon" width="88" height="88">
+        <div>
+          <h3>Hexa Stacks</h3>
+          <p>A sorting puzzle about colourful caterpillars that turn into butterflies. Collect them all in your garden.</p>
+          <span class="tag">Coming soon</span>
+        </div>
+      </article>
+      <article class="game">
+        <img src="jam-blast.png" alt="Jam Blast icon" width="88" height="88">
+        <div>
+          <h3>Jam Blast</h3>
+          <p>A physics cannon game: three worlds, thousands of towers, and the most satisfying smash on your phone.</p>
+          <span class="tag">In development</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="studio">
+    <div class="about">
+      <div>
+        <h2>The studio</h2>
+        <p><em>Bindu</em> is the point from which a whole picture begins. That is how we like to build games: start from one simple idea and grow it carefully until it feels right in your hands.</p>
+        <p>We keep our games fair. No lives that make you wait, ads only between levels, and progress you can always see.</p>
+      </div>
+      <dl class="facts">
+        <dt>Company</dt><dd>BINDU GAMES LLC</dd>
+        <dt>Registered</dt><dd>Republic of Armenia, 13 Oct 2026</dd>
+        <dt>Reg. number</dt><dd>999.110.1617555</dd>
+        <dt>Tax ID</dt><dd>08336878</dd>
+        <dt>Address</dt><dd>3 Hakob Hakobyan St, Yerevan 0033, Armenia</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="lede">Questions, support, partnerships: write to <a href="mailto:milana@bindugames.com">milana@bindugames.com</a>. We answer within two working days.</p>
+  </section>
+
+  <footer>
+    <span>© 2026 BINDU GAMES LLC</span>
+    <span><a href="privacy.html">Privacy Policy</a></span>
+  </footer>
+</div>
+</body>
+</html>
